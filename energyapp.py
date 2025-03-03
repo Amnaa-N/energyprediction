@@ -22,7 +22,7 @@ st.markdown(
         background-color: grey; 
     }
     .stApp {
-            background-color:#0B2545 ; 
+            background-color:#503D42 ; 
         color:#EEF4ED;
         padding: 20px;
         border-radius: 10px;
@@ -52,7 +52,7 @@ st.markdown(
     }
 
     button[title="Decrement"] {
-        background-color: #68aeac !important; 
+        background-color: #748B75 !important; 
         color: white !important;
         border-radius: 50%;
         padding: 5px 10px;
@@ -67,7 +67,7 @@ st.markdown(
     }
 
 .custom-alert {
-        background-color: #134074; 
+        background-color: #92AD94; 
         color: #171829;  
         padding: 15px;
         border-radius: 8px;
