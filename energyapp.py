@@ -30,14 +30,14 @@ st.markdown(
     }
      /* Custom slider */
     div[data-baseweb="slider"] {
-        background: #cad076 !important;  /* Light blue */
+        background: #ffd8aa !important;  
         border-radius: 10px;
         padding: 10px;
     }
     
     /* Custom input box */
     input[type="number"] {
-        background-color:  #cad076 !important; /* Light Blue */
+        background-color:  #ffd8aa !important;
         border-radius: 5px;
         padding: 8px;
         color: black;
@@ -45,14 +45,14 @@ st.markdown(
     }
     
       button[title="Increment"] {
-        background-color: #68aeac !important; /* Blue */
+        background-color: #68aeac !important;
         color: white !important;
         border-radius: 50%;
         padding: 5px 10px;
     }
 
     button[title="Decrement"] {
-        background-color: #68aeac !important; /* Red */
+        background-color: #68aeac !important; 
         color: white !important;
         border-radius: 50%;
         padding: 5px 10px;
@@ -67,8 +67,8 @@ st.markdown(
     }
 
 .custom-alert {
-        background-color: #e3f2fd;  /* Light Blue */
-        color: #0d47a1;  /* Dark Blue Text */
+        background-color: #e3f2fd; 
+        color: #0d47a1;  
         padding: 15px;
         border-radius: 8px;
         font-size: 18px;
