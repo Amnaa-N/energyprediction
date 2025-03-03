@@ -29,8 +29,8 @@ st.markdown(
         box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
     }
     .custom-label {
-        color: #0D47A1;  
-        font-size: 16px;
+        color: white;  
+        font-size: 14px;
         font-weight: bold;
     }
      /* Custom slider */
