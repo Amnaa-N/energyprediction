@@ -22,7 +22,7 @@ st.markdown(
         background-color: grey; 
     }
     .stApp {
-            background-color:#7e9c5e ; 
+            background-color:#619d73 ; 
         color:#171829;
         padding: 20px;
         border-radius: 10px;
