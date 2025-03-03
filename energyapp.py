@@ -60,7 +60,7 @@ st.markdown(
 
     /* Custom Button */
     .stButton>button {
-        background-color: #8da9c4 !important;
+        background-color: #748B75 !important;
         color: white !important;
         border-radius: 8px;
         padding: 10px;
