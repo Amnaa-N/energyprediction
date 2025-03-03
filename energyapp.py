@@ -31,6 +31,7 @@ st.markdown(
      /* Custom slider */
     div[data-baseweb="slider"] {
         background: #92AD94 !important;  
+         color:black;
         border-radius: 10px;
         padding: 10px;
     }
@@ -38,6 +39,7 @@ st.markdown(
     /* Custom input box */
     input[type="number"] {
         background-color:  #92AD94 !important;
+        color:black;
         border-radius: 5px;
         padding: 8px;
         color: black;
