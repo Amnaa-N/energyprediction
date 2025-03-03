@@ -30,14 +30,14 @@ st.markdown(
     }
      /* Custom slider */
     div[data-baseweb="slider"] {
-        background: #eef4ed !important;  
+        background: #92AD94 !important;  
         border-radius: 10px;
         padding: 10px;
     }
     
     /* Custom input box */
     input[type="number"] {
-        background-color:  #eef4ed !important;
+        background-color:  #92AD94 !important;
         border-radius: 5px;
         padding: 8px;
         color: black;
