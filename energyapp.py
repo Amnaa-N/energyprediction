@@ -22,7 +22,7 @@ st.markdown(
         background-color: grey; 
     }
     .stApp {
-            background-color:#73729e ; 
+            background-color:#68a357 ; 
         color:#171829;
         padding: 20px;
         border-radius: 10px;
@@ -30,14 +30,14 @@ st.markdown(
     }
      /* Custom slider */
     div[data-baseweb="slider"] {
-        background: #ffd8aa !important;  
+        background: #bca371 !important;  
         border-radius: 10px;
         padding: 10px;
     }
     
     /* Custom input box */
     input[type="number"] {
-        background-color:  #ffd8aa !important;
+        background-color:  #bca371 !important;
         border-radius: 5px;
         padding: 8px;
         color: black;
@@ -60,15 +60,15 @@ st.markdown(
 
     /* Custom Button */
     .stButton>button {
-        background-color: #3e3524 !important;
+        background-color: #c97064 !important;
         color: white !important;
         border-radius: 8px;
         padding: 10px;
     }
 
 .custom-alert {
-        background-color: #e3f2fd; 
-        color: #0d47a1;  
+        background-color: #a6b07e; 
+        color: #171829;  
         padding: 15px;
         border-radius: 8px;
         font-size: 18px;
