@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
 import pickle
 
@@ -14,7 +13,7 @@ st.set_page_config(
     layout="centered"
 )
 
-
+# Custom Styling
 st.markdown(
     """
     <style>
@@ -22,7 +21,7 @@ st.markdown(
         background-color: black; 
     }
     .stApp {
-            background-color:#503D42 ; 
+        background-color:#503D42; 
         color:#EEF4ED;
         padding: 20px;
         border-radius: 10px;
@@ -33,47 +32,36 @@ st.markdown(
         font-size: 14px;
         font-weight: bold;
     }
-     /* Custom slider */
+    /* Custom slider */
     div[data-baseweb="slider"] {
         background: #92AD94 !important;  
-         color:black;
         border-radius: 10px;
         padding: 8px;
     }
-    
     /* Custom input box */
     input[type="number"] {
-        background-color:  #92AD94 !important;
-        color:black;
+        background-color: #92AD94 !important;
+        color: black;
         border-radius: 5px;
         padding: 8px;
-        color: black;
         border: 1px solid;
     }
-    
-      button[title="Increment"] {
+    /* Custom + and - buttons */
+    button[title="Increment"], button[title="Decrement"] {
         background-color: #68aeac !important;
         color: white !important;
         border-radius: 50%;
         padding: 5px 10px;
     }
-
-    button[title="Decrement"] {
-        background-color: #748B75 !important; 
-        color: white !important;
-        border-radius: 50%;
-        padding: 5px 10px;
-    }
-
     /* Custom Button */
     .stButton>button {
         background-color: #748B75 !important;
-        color:black; !important;
+        color: black !important;
         border-radius: 8px;
         padding: 10px;
     }
-
-.custom-alert {
+    /* Custom Output Box */
+    .custom-alert {
         background-color: #92AD94; 
         color: #171829;  
         padding: 15px;
@@ -83,41 +71,49 @@ st.markdown(
         text-align: center;
         border: 2px solid #64b5f6;
     }
-    
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# UI Title with Emoji
-st.title("🏡 Household Energy Consumption Prediction ")
+# UI Title
+st.title("🏡 Household Energy Consumption Prediction 🔋")
 
 # Subtitle
 st.markdown("### Estimate your home's energy usage based on conditions.")
 
-# Use Columns for Better Layout
+# Layout using columns
 col1, col2 = st.columns(2)
 
 with col1:
     st.markdown('<p class="custom-label">🌡 Temperature (°C)</p>', unsafe_allow_html=True)
     temperature = st.number_input("", min_value=0.0, max_value=50.0, value=25.0)
+
     st.markdown('<p class="custom-label">💧 Humidity (%)</p>', unsafe_allow_html=True)
     humidity = st.number_input("", min_value=0.0, max_value=100.0, value=50.0)
-    
+
+    st.markdown('<p class="custom-label">🕒 Hour of the Day</p>', unsafe_allow_html=True)
+    hour = st.slider("", 0, 23, 12, key="hour_slider")
+
 with col2:
     st.markdown('<p class="custom-label">🔌 Number of Appliances</p>', unsafe_allow_html=True)
     appliances = st.number_input("", min_value=0, max_value=100, value=5)
-    st.markdown('<p class="custom-label">🕒 Hour of the Day</p>', unsafe_allow_html=True)
-hour = st.slider("", 0, 23, 12)
-st.markdown('<p class="custom-label">📅 Day of the Week (0=Monday, 6=Sunday)</p>', unsafe_allow_html=True)
-day_of_week = st.slider("", 0, 6, 3)
 
-# Add a Cool Button for Prediction
-if st.button("🚀 Predict Energy Consumption"):
+    st.markdown('<p class="custom-label">📅 Day of the Week (0=Monday, 6=Sunday)</p>', unsafe_allow_html=True)
+    day_of_week = st.slider("", 0, 6, 3, key="day_slider")
+
+# Centered Predict Button
+st.markdown("<br>", unsafe_allow_html=True)
+center_col = st.columns([2, 1, 2])[1]
+with center_col:
+    predict_btn = st.button("🚀 Predict Energy Consumption")
+
+# Handle Prediction
+if predict_btn:
     input_data = np.array([[temperature, humidity, appliances, hour, day_of_week]])
     prediction = model.predict(input_data)
-    
-# Custom Alert Box with Dynamic Prediction Value
+
+    # Custom Alert Box for Output
     st.markdown(
         f"""
         <div class="custom-alert">
@@ -126,4 +122,3 @@ if st.button("🚀 Predict Energy Consumption"):
         """,
         unsafe_allow_html=True
     )
-
