@@ -65,6 +65,18 @@ st.markdown(
         border-radius: 8px;
         padding: 10px;
     }
+
+.custom-alert {
+        background-color: #e3f2fd;  /* Light Blue */
+        color: #0d47a1;  /* Dark Blue Text */
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        border: 2px solid #64b5f6;
+    }
+    
     </style>
     """,
     unsafe_allow_html=True
@@ -93,6 +105,13 @@ if st.button("🚀 Predict Energy Consumption"):
     input_data = np.array([[temperature, humidity, appliances, hour, day_of_week]])
     prediction = model.predict(input_data)
     
-    st.success(f"⚡ Predicted Energy Consumption: {prediction[0]:.2f} kWh")
-
+# Custom Alert Box with Dynamic Prediction Value
+    st.markdown(
+        f"""
+        <div class="custom-alert">
+            ⚡ Predicted Energy Consumption: <strong>{prediction[0]:.2f} kWh</strong>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
