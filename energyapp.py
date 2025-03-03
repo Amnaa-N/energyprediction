@@ -14,7 +14,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# Custom Background Color
+
 st.markdown(
     """
     <style>
@@ -27,6 +27,11 @@ st.markdown(
         padding: 20px;
         border-radius: 10px;
         box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    .custom-label {
+        color: #0D47A1;  
+        font-size: 16px;
+        font-weight: bold;
     }
      /* Custom slider */
     div[data-baseweb="slider"] {
@@ -94,13 +99,18 @@ st.markdown("### Estimate your home's energy usage based on conditions.")
 col1, col2 = st.columns(2)
 
 with col1:
-    temperature = st.number_input("🌡 Temperature (°C)", min_value=0.0, max_value=50.0, value=25.0)
-    humidity = st.number_input("💧 Humidity (%)", min_value=0.0, max_value=100.0, value=50.0)
+    st.markdown('<p class="custom-label">🌡 Temperature (°C)</p>', unsafe_allow_html=True)
+    temperature = st.number_input("", min_value=0.0, max_value=50.0, value=25.0)
+    st.markdown('<p class="custom-label">💧 Humidity (%)</p>', unsafe_allow_html=True)
+    humidity = st.number_input("", min_value=0.0, max_value=100.0, value=50.0)
     
 with col2:
-    appliances = st.number_input("🔌 Number of Appliances", min_value=0, max_value=100, value=5)
-    hour = st.slider("🕒 Hour of the Day", 0, 23, 12)
-    day_of_week = st.slider("📅 Day of the Week (0=Monday, 6=Sunday)", 0, 6, 3)
+    st.markdown('<p class="custom-label">🔌 Number of Appliances</p>', unsafe_allow_html=True)
+    appliances = st.number_input("", min_value=0, max_value=100, value=5)
+    st.markdown('<p class="custom-label">🕒 Hour of the Day</p>', unsafe_allow_html=True)
+hour = st.slider("", 0, 23, 12)
+st.markdown('<p class="custom-label">📅 Day of the Week (0=Monday, 6=Sunday)</p>', unsafe_allow_html=True)
+day_of_week = st.slider("", 0, 6, 3)
 
 # Add a Cool Button for Prediction
 if st.button("🚀 Predict Energy Consumption"):
