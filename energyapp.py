@@ -38,7 +38,7 @@ st.markdown(
         background: #92AD94 !important;  
          color:black;
         border-radius: 10px;
-        padding: 10px;
+        padding: 8px;
     }
     
     /* Custom input box */
